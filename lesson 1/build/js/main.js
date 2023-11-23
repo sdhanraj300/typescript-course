@@ -23,3 +23,20 @@ const addAll = function (a, b, c) {
 };
 console.log(addAll(1, 2, 3));
 console.log(addAll(1, 2));
+//rest parameters
+const total = (a, ...nums) => {
+    return a + nums.reduce((prev, current) => prev + current);
+};
+console.log(total(10, 2, 3, 4, 5));
+const createError = (msg) => {
+    throw new Error(msg);
+};
+const numberOrString = (value) => {
+    if (isNumber(value)) {
+        return `Your number is ${value}`;
+    }
+    return `Your string is ${value}`;
+};
+const isNumber = (value) => {
+    return typeof value === "number";
+};

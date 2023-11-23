@@ -77,3 +77,25 @@ const addAll = function (a: number, b: number, c?: number): number {
 
 console.log(addAll(1, 2, 3));
 console.log(addAll(1, 2));
+
+//rest parameters
+const total = (a: number, ...nums: number[]): number => {
+  return a + nums.reduce((prev, current) => prev + current);
+};
+
+console.log(total(10, 2, 3, 4, 5));
+
+const createError = (msg: string): never => {
+  throw new Error(msg);
+};
+
+const numberOrString = (value: string | number): string => {
+  if (isNumber(value)) {
+    return `Your number is ${value}`;
+  }
+  return `Your string is ${value}`;
+};
+
+const isNumber = (value: any): boolean => {
+  return typeof value === "number";
+};
