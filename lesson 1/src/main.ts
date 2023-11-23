@@ -52,3 +52,28 @@ type Guitarist = {
 
 let userName: "John" | "Jane" | "Joe";
 userName = "Jane";
+
+const add = (a: number, b: number): number => {
+  return a + b;
+};
+
+const logMsg = (message: any): void => {
+  console.log(message);
+};
+logMsg("i am bad");
+logMsg(add(1, 2));
+
+type MathFunction = (a: number, b: number) => number;
+let subtract: MathFunction = function (c, d) {
+  return c - d;
+};
+
+const addAll = function (a: number, b: number, c?: number): number {
+  if (typeof c !== "undefined") {
+    return a + b + c;
+  }
+  return a + b;
+};
+
+console.log(addAll(1, 2, 3));
+console.log(addAll(1, 2));
